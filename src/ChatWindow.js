@@ -5,16 +5,15 @@ class ChatWindow extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			messages:[]
-		};
+			name: "Elisa",
+		}
 	}
-
 	render() {
 		return (
 			<div className="ChatWindow">
-				<h1>505 react chat app</h1>
+				<h1>505 React Chat</h1>
 				<div className="window">
-					{this.state.messages.map(message => {
+					{this.props.messages.map(message => {
 						return (
 							<div>{message}</div>
 						)

@@ -5,18 +5,19 @@ class ChatInput extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			newMessage:'',
-		};
+			newMessage: '',
+		}
 	}
 
-	handleChange (event) {
-		this.setState({newMessage: event.target.value})
+	handleChange = (event) => {
+		this.setState({ newMessage: event.currentTarget.value})
 	}
 
 	render() {
 		return (
 			<div className="ChatInput">
-				<input type="text" value={this.state.newMessage} onChange={this.handleChange}/>
+				<input type="text" value={this.state.newMessage} onChange={this.handleChange} />
+				<button onClick={() => {this.props.addNewMessage(this.state.newMessage); this.setState({ newMessage: '' })}}>Chat</button>
 			</div>
 		);
 	}
